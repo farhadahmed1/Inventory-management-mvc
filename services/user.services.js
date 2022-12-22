@@ -8,3 +8,8 @@ exports.findUserByEmail = async (email) => {
   const user = await User.findOne({ email });
   return user;
 };
+exports.getUsersService = async () => {
+  const user = await User.find({});
+  // console.log(user);
+  return user;
+};

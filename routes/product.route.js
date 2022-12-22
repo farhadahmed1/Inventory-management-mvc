@@ -19,7 +19,11 @@ router.post(
 router.route("/bulk-update").patch(productController.bulkUpdateProduct);
 router
   .route("/")
-  .get(productController.getProducts)
+  .get(
+    // verifyToken,
+    // authorization("admin", "store-manage"),
+    productController.getProducts
+  )
   .post(
     verifyToken,
     authorization("admin", "store-manage"),
